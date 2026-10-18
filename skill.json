@@ -1,0 +1,39 @@
+{
+  "name": "genpark-agentic-commerce-recurring-utility-bill-negotiator-skill",
+  "version": "1.0.0",
+  "description": "AI Agentic Commerce Telecom & Utility Bill Retention Negotiator. Audits monthly broadband and mobile bills, detects out-of-contract price creep and hidden junk fees, and synthesizes high-leverage churn-threat retention negotiation scripts.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "audit_and_negotiate_bill",
+      "description": "Analyze recurring utility/telecom bill for price creep and generate retention negotiation script.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "Service provider (e.g. Comcast Xfinity, AT&T, Spectrum, Verizon)."
+          },
+          "service_tier": {
+            "type": "string",
+            "description": "Plan name (e.g. Gigabit Fiber, Unlimited Plus)."
+          },
+          "current_monthly_charge": {
+            "type": "number",
+            "description": "Current billed monthly fee."
+          },
+          "contract_end_months_ago": {
+            "type": "integer",
+            "description": "Months elapsed since initial promotion expired."
+          }
+        },
+        "required": [
+          "provider",
+          "service_tier",
+          "current_monthly_charge"
+        ]
+      }
+    }
+  ]
+}
